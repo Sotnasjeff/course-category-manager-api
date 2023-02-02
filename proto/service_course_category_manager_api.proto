@@ -1,0 +1,16 @@
+syntax = "proto3";
+package pb;
+option go_package = "github.com/course-category-manager-api/pb";
+
+import "rpc_create_category.proto";
+import "rpc_list_course_category.proto";
+import "rpc_get_categories_by_id.proto";
+
+
+service CategoryService {
+    rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {}
+    rpc CreateCategoryStream(stream CreateCategoryRequest) returns (ListCategoryResponse){}
+    rpc CreateCategoryBidirectionalStream(stream CreateCategoryRequest) returns (stream CreateCategoryResponse){}
+    rpc ListCategories(Blank) returns (ListCategoryResponse) {}
+    rpc GetCategoriesById(GetCategoriesByIdRequest) returns (GetCategoriesByIdResponse) {}
+}

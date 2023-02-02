@@ -1,0 +1,14 @@
+syntax = "proto3";
+package pb;
+option go_package = "github.com/course-category-manager-api/pb";
+
+import "course_category.proto";
+
+message CreateCategoryRequest {
+    string name = 1;
+    string description = 2;
+}
+
+message CreateCategoryResponse {
+    Category category = 1;
+}

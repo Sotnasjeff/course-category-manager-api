@@ -1,0 +1,9 @@
+syntax = "proto3";
+package pb;
+option go_package = "github.com/course-category-manager-api/pb";
+
+message Category {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
